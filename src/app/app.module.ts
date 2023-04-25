@@ -3,13 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './core/home/home.component';
+import { AboutComponent } from './core/about/about.component';
+import { E404Component } from './core/e404/e404.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    E404Component
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, FormsModule, HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
