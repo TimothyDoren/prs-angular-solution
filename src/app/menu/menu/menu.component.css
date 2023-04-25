@@ -1,0 +1,18 @@
+nav {
+    background-color: #454545;
+}
+li {
+    display: inline-block;
+}
+ul{
+    padding-left: 5px;
+}
+a{
+    color: silver;
+    text-decoration: none;
+    padding: 0 10px;
+}
+a:hover{
+    color:white;
+    background-color: black;
+}

@@ -1,0 +1,22 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{ pageTitle }}</span>
+    </header>
+    <table class="table table-sm">
+        <tbody>
+            <tr>
+                <td>Username</td>
+                <td><input [(ngModel)]="username"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input [(ngModel)]="password" type="password"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="text-danger fw-bold fst-italic">{{ message }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="login()" class="btn btn-primary">Login</button>
+</div>
