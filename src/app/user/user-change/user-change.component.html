@@ -1,1 +1,47 @@
-<p>user-change works!</p>
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{pageTitle}}</span>
+    </header>
+<main>
+    <table class="table table-sm" *ngIf="user">
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="user.id" readonly></td>
+        </tr>
+        <tr>
+            <td>Username</td>
+            <td><input [(ngModel)]="user.username"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input [(ngModel)]="user.password" type="password"></td>
+        </tr>
+        <tr>
+            <td>Firstname</td>
+            <td><input [(ngModel)]="user.firstname"></td>
+        </tr>
+        <tr>
+            <td>Lastname</td>
+            <td><input [(ngModel)]="user.lastname"></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input [(ngModel)]="user.phone"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input [(ngModel)]="user.email"></td>
+        </tr>
+        <tr>
+            <td>Reviewer</td>
+            <td><input [(ngModel)]="user.isReviewer"></td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td><input [(ngModel)]="user.isAdmin"></td>
+        </tr>
+    </table>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</main>
+</div>
