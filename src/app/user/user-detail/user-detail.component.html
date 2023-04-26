@@ -1,0 +1,53 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{ pageTitle }}</span>
+    </header>
+    <main>
+        <table class="table table-sm" *ngIf="user">
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td><input [(ngModel)]="user.id" readonly></td>
+                </tr>
+                <tr>
+                    <td>Username</td>
+                    <td><input [(ngModel)]="user.username" readonly></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input [(ngModel)]="user.password" type="password" readonly></td>
+                </tr>
+                <tr>
+                    <td>Firstname</td>
+                    <td><input [(ngModel)]="user.firstname" readonly></td>
+                </tr>
+                <tr>
+                    <td>Lastname</td>
+                    <td><input [(ngModel)]="user.lastname" readonly></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><input [(ngModel)]="user.phone" readonly></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input [(ngModel)]="user.email" readonly></td>
+                </tr>
+                <tr>
+                    <td>Reviewer</td>
+                    <td><input [(ngModel)]="user.isReviewer" readonly></td>
+                </tr>
+                <tr>
+                    <td>Admin</td>
+                    <td><input [(ngModel)]="user.isAdmin" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="remove()" class="btn btn-danger">Remove</button>
+        <span *ngIf="showVerifyRemove">
+            <span> | </span>
+            <button (click)="removeVerified()" class="btn btn-danger">Verify Remove</button>
+        </span>
+    </main>
+</div>

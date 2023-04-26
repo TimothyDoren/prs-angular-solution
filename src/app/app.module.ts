@@ -11,6 +11,9 @@ import { E404Component } from './core/e404/e404.component';
 import { MenuComponent } from './menu/menu/menu.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserChangeComponent } from './user/user-change/user-change.component';
+import { UserCreateComponent } from './user/user-create/user-create.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { UserLoginComponent } from './user/user-login/user-login.component';
     E404Component,
     MenuComponent,
     UserListComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    UserDetailComponent,
+    UserChangeComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
