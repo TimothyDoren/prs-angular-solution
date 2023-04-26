@@ -1,0 +1,53 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{ pageTitle }}</span>
+    </header>
+    <main>
+        <table class="table table-sm" *ngIf="vendor">
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td><input [(ngModel)]="vendor.id" readonly></td>
+                </tr>
+                <tr>
+                    <td>Code</td>
+                    <td><input [(ngModel)]="vendor.code" readonly></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input [(ngModel)]="vendor.name" type="password" readonly></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><input [(ngModel)]="vendor.address" readonly></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td><input [(ngModel)]="vendor.city" readonly></td>
+                </tr>
+                <tr>
+                    <td>State</td>
+                    <td><input [(ngModel)]="vendor.state" readonly></td>
+                </tr>
+                <tr>
+                    <td>Zip</td>
+                    <td><input [(ngModel)]="vendor.zip" readonly></td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td><input [(ngModel)]="vendor.phone" readonly></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input [(ngModel)]="vendor.email" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="remove()" class="btn btn-danger">Remove</button>
+        <span *ngIf="showVerifyRemove">
+            <span> | </span>
+            <button (click)="removeVerified()" class="btn btn-danger">Verify Remove</button>
+        </span>
+    </main>
+</div>

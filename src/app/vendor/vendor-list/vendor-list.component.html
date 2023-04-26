@@ -1,0 +1,42 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{ pageTitle }}</span>
+        <span> | </span>
+        <a routerLink="/vendor/create" class="">Create New</a>
+    </header>
+    <table class = "table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let v of vendors">
+                <td>{{ v.id }}</td>
+                <td>{{ v.code }}</td>
+                <td>{{ v.name }}</td>
+                <td>{{ v.address }}</td>
+                <td>{{ v.city }}</td>
+                <td>{{ v.state }}</td>
+                <td>{{ v.zip }}</td>
+                <td>{{ v.phone }}</td>
+                <td>{{ v.email }}</td>
+                <td>
+                    <a routerLink="/vendor/detail/{{ v.id }}">Detail</a>
+                    <span> | </span>
+                    <a routerLink="/vendor/change/{{ v.id }}">Change</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
