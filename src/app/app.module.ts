@@ -20,6 +20,9 @@ import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.comp
 import { VendorChangeComponent } from './vendor/vendor-change/vendor-change.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductChangeComponent } from './product/product-change/product-change.component';
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import { ProductListComponent } from './product/product-list/product-list.compon
     VendorCreateComponent,
     VendorChangeComponent,
     RequestListComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductDetailComponent,
+    ProductCreateComponent,
+    ProductChangeComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

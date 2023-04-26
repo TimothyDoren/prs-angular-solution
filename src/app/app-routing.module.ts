@@ -13,8 +13,10 @@ import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.comp
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorChangeComponent } from './vendor/vendor-change/vendor-change.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
-import { Product } from './product/product.class';
 import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductChangeComponent } from './product/product-change/product-change.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 
 const routes: Routes = [
 
@@ -28,10 +30,13 @@ const routes: Routes = [
   { path: "user/change/:id", component: UserChangeComponent},
   { path: "user/create", component: UserCreateComponent},
   { path: "vendor/list", component: VendorListComponent},
-  { path: "vendor/detail", component: VendorDetailComponent},
+  { path: "vendor/detail/:id", component: VendorDetailComponent},
   { path: "vendor/create", component: VendorCreateComponent},
-  { path: "vendor/change", component: VendorChangeComponent},
+  { path: "vendor/change/:id", component: VendorChangeComponent},
   { path: "product/list", component: ProductListComponent},
+  { path: "product/detail/:id", component: ProductDetailComponent},
+  { path: "product/create", component: ProductCreateComponent},
+  { path: "product/change/:id", component: ProductChangeComponent},
   { path: "request/list", component: RequestListComponent},
 
   { path: "**", component: E404Component}

@@ -1,0 +1,45 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{ pageTitle }}</span>
+    </header>
+    <main>
+        <table class="table table-sm" *ngIf="product">
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td><input [(ngModel)]="product.id" readonly></td>
+                </tr>
+                <tr>
+                    <td>partNbr</td>
+                    <td><input [(ngModel)]="product.partNbr" readonly></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input [(ngModel)]="product.name" readonly></td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td><input [(ngModel)]="product.price" readonly></td>
+                </tr>
+                <tr>
+                    <td>Unit</td>
+                    <td><input [(ngModel)]="product.unit" readonly></td>
+                </tr>
+                <tr>
+                    <td>PhotoPath</td>
+                    <td><input [(ngModel)]="product.photoPath" readonly></td>
+                </tr>
+                <tr *ngIf="product.vendor">
+                    <td>vendorId</td>
+                    <td><input [(ngModel)]="product.vendor.id" readonly></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="remove()" class="btn btn-danger">Remove</button>
+        <span *ngIf="showVerifyRemove">
+            <span> | </span>
+            <button (click)="removeVerified()" class="btn btn-danger">Verify Remove</button>
+        </span>
+    </main>
+</div>
