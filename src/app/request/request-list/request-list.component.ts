@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
-import { VendorService } from '../vendor.service';
-import { Vendor } from '../vendor.class';
+import { Request } from '../request.class'
 import { SystemService } from 'src/app/core/system.service';
+import { RequestService } from '../request.service';
 
 @Component({
-  selector: 'app-vendor-list',
-  templateUrl: './vendor-list.component.html',
-  styleUrls: ['./vendor-list.component.css']
+  selector: 'app-request-list',
+  templateUrl: './request-list.component.html',
+  styleUrls: ['./request-list.component.css']
 })
-export class VendorListComponent {
+export class RequestListComponent {
 
-  pageTitle: string = "Vendor List";
-  vendors: Vendor[] = [];
+  pageTitle = "Request List";
+  requests: Request[] = [];
 
   constructor(
     private sys: SystemService,
-    private venSvc: VendorService
+    private reqSvc: RequestService
   ){}
 
   ngOnInit(): void {
@@ -25,14 +25,15 @@ export class VendorListComponent {
     } else {
       console.log("No one is Logged in");
     }
-    this.venSvc.list().subscribe({
+    this.reqSvc.list().subscribe({
       next: (res) => {
-        console.debug("Employees: ", res);
-        this.vendors = res;
+        console.debug("Requests: ", res);
+        this.requests = res;
       }, 
       error: (err) => {
         console.error(err);
       }
     })
   }
+
 }

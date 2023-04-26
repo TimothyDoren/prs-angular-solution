@@ -12,6 +12,7 @@ import { VendorListComponent } from './vendor/vendor-list/vendor-list.component'
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorChangeComponent } from './vendor/vendor-change/vendor-change.component';
+import { RequestListComponent } from './request/request-list/request-list.component';
 
 const routes: Routes = [
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: "vendor/detail", component: VendorDetailComponent},
   { path: "vendor/create", component: VendorCreateComponent},
   { path: "vendor/change", component: VendorChangeComponent},
+  { path: "request/list", component: RequestListComponent},
 
   { path: "**", component: E404Component}
 
