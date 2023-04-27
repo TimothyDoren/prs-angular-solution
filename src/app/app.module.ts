@@ -51,7 +51,7 @@ import { RequestChangeComponent } from './request/request-change/request-change.
     ProductChangeComponent,
     RequestDetailComponent,
     RequestCreateComponent,
-    RequestChangeComponent
+    RequestChangeComponent,
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
