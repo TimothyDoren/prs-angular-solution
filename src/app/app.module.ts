@@ -23,6 +23,9 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { ProductChangeComponent } from './product/product-change/product-change.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestChangeComponent } from './request/request-change/request-change.component';
 
 
 @NgModule({
@@ -45,7 +48,10 @@ import { ProductChangeComponent } from './product/product-change/product-change.
     ProductListComponent,
     ProductDetailComponent,
     ProductCreateComponent,
-    ProductChangeComponent
+    ProductChangeComponent,
+    RequestDetailComponent,
+    RequestCreateComponent,
+    RequestChangeComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

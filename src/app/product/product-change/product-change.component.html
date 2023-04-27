@@ -32,7 +32,9 @@
                 </tr>
                 <tr *ngIf="product.vendor">
                     <td>Vendor</td>
-                    <td><input [(ngModel)]="product.vendor.name"></td>
+                    <td>
+                        <input [(ngModel)]="product.vendor.name">
+                    </td>
                 </tr>
             </tbody>
         </table>

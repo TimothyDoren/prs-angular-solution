@@ -17,6 +17,9 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { ProductChangeComponent } from './product/product-change/product-change.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { RequestChangeComponent } from './request/request-change/request-change.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 
 const routes: Routes = [
 
@@ -38,6 +41,10 @@ const routes: Routes = [
   { path: "product/create", component: ProductCreateComponent},
   { path: "product/change/:id", component: ProductChangeComponent},
   { path: "request/list", component: RequestListComponent},
+  { path: "request/detail/:id", component: RequestDetailComponent},
+  { path: "request/create", component: RequestCreateComponent},
+  { path: "request/change/:id", component: RequestChangeComponent},
+  
 
   { path: "**", component: E404Component}
 
