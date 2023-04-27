@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
+import { VendorService } from 'src/app/vendor/vendor.service';
+import { Vendor } from 'src/app/vendor/vendor.class';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,11 +14,13 @@ export class ProductDetailComponent {
   pageTitle = "Product Detail";
   showVerifyRemove: boolean = false;
   product!: Product;
+  vendor!: Vendor;
 
   constructor(
     private prodSvc: ProductService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private venSvc: VendorService
   ){}
 
   remove(): void {
@@ -41,6 +45,18 @@ export class ProductDetailComponent {
       next: (res) => {
         console.debug("Product:", res);
         this.product = res;
+        this.venSvc.get(this.product.vendorId).subscribe({
+          next: (res) => {
+            console.debug("Vendor:", res);
+            this.vendor = res;
+            this.product.vendor = res;
+            this.product.vendorId = this.vendor.id;
+            this.product.vendorName = this.vendor.name;
+          },
+          error: (err) => {
+            console.error(err);
+          }
+        })
       },
       error: (err) => {
         console.error(err);

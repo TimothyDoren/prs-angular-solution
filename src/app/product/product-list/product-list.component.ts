@@ -15,6 +15,7 @@ export class ProductListComponent {
   pageTitle: string = "Product List";
   products: Product[] = [];
   vendor!: Vendor;
+  product!: Product;
 
   constructor(
     private sys: SystemService,
@@ -33,6 +34,20 @@ export class ProductListComponent {
       next: (res) => {
         console.debug("Products: ", res);
         this.products = res;
+        for(let p of this.products){
+          this.venSvc.get(p.vendorId).subscribe({
+            next: (res) => {
+              console.debug("Vendor:", res);
+              this.vendor = res;
+              p.vendor = res;
+              p.vendorId = this.vendor.id;
+              p.vendorName = this.vendor.name;
+            },
+            error: (err) => {
+              console.error(err);
+            }
+          });
+        }
       }, 
       error: (err) => {
         console.error(err);
