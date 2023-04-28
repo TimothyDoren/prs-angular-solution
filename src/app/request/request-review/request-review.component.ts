@@ -24,9 +24,6 @@ export class RequestReviewComponent {
     private userSvc: UserService
   ){}
 
-  getLoginedUser(): void {
-   
-  }
 
   ngOnInit(): void {
     this.reqSvc.requestsInReview(this.sys.getLoggedInUserId()).subscribe({

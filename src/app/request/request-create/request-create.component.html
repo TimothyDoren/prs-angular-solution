@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <td>RejectionReason</td>
-                    <td><input [(ngModel)]="request.rejectionReason"></td>
+                    <td><input [(ngModel)]="request.rejectionReason" readonly></td>
                 </tr>
                 <tr>
                     <td>DeliveryMode</td>
@@ -28,15 +28,15 @@
                 </tr>
                 <tr>
                     <td>Status</td>
-                    <td><input [(ngModel)]="request.status"></td>
+                    <td><input [(ngModel)]="request.status" readonly></td>
                 </tr>
                 <tr>
                     <td>Total</td>
-                    <td><input [(ngModel)]="request.total"></td>
+                    <td><input [(ngModel)]="request.total" readonly></td>
                 </tr>
                 <tr *ngIf="request.user">
                     <td>UserId</td>
-                    <td><input [(ngModel)]="request.user.id"></td>
+                    <td><input [(ngModel)]="request.user.id" readonly></td>
                 </tr>
             </tbody>
         </table>

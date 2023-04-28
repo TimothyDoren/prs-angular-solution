@@ -4,6 +4,7 @@ import { User } from 'src/app/user/user.class';
 import { UserService } from 'src/app/user/user.service';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class'
+import { SystemService } from 'src/app/core/system.service';
 
 @Component({
   selector: 'app-request-create',
@@ -12,17 +13,19 @@ import { Request } from '../request.class'
 })
 export class RequestCreateComponent {
   request: Request = new Request();
-  users!: User[];
+  user!: User;
   pageTitle = "Request Create";
 
   constructor(
     private reqSvc: RequestService,
     private userSvc: UserService,
+    private sys: SystemService,
     private router: Router
   ){ }
 
   save(): void{
-    this.request.userId = Number(this.request.userId);
+    let userId = Number(this.sys.getLoggedInUserId());
+    this.request.userId = userId;
     this.reqSvc.create(this.request).subscribe({
       next: (res) => {
         console.debug("Request:", res);
@@ -35,10 +38,10 @@ export class RequestCreateComponent {
   }
 
   ngOnInit(): void {
-    this.userSvc.list().subscribe({
+    this.userSvc.get(this.sys.getLoggedInUserId()).subscribe({
       next: (res) => {
         console.debug("User:", res);
-        this.users = res;
+        this.user = res;
       },
       error: (err) => {
         console.error(err);
