@@ -1,0 +1,61 @@
+<div id="component">
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{ pageTitle }}</span>
+        <span> | </span>
+        <a routerLink="/request/create" class="">Create New</a>
+    </header>
+    <table class = "table table-striped table-sm" *ngIf="request">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Justification</th>
+                <th>RejectionReason</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ request.id }}</td>
+                <td>{{ request.description }}</td>
+                <td>{{ request.justification }}</td>
+                <td>{{ request.rejectionReason }}</td>
+                <td>{{ request.status }}</td>
+                <td>{{ request.total | currency }}</td>
+                <td>
+                    <button (click)="review()" class="btn btn-link">Review</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a routerLink="/requestLine/create/{{request.id}}" *ngIf="request">Create New</a>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Line total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="request && request.requestLines">
+            <tr *ngFor="let rl of request.requestLines">
+                <td>{{ rl.id }}</td>
+                <td>{{ rl.product?.name }}</td>
+                <td>{{ rl.product?.price | currency }}</td>
+                <td>{{ rl.quantity }}</td>
+                <td>{{ rl.quantity * (rl.product === null ? 0 : rl.product.price) }}</td>
+                <td>
+                    <a routerLink="/requestline/edit/{{rl.id}}">Change</a>
+                    <span> | </span>
+                    <a (click)="remove(rl)" class="">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

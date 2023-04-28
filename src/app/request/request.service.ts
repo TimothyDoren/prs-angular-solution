@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Request } from './request.class'
+import { RequestLine } from '../requestLine/requestLine.class';
 
 @Injectable({
   providedIn: 'root'

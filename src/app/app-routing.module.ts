@@ -20,6 +20,7 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { RequestChangeComponent } from './request/request-change/request-change.component';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestLineListComponent } from './requestLine/request-line-list/request-line-list.component';
 
 const routes: Routes = [
 
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: "request/detail/:id", component: RequestDetailComponent},
   { path: "request/create", component: RequestCreateComponent},
   { path: "request/change/:id", component: RequestChangeComponent},
+  { path: "requestLine/list/:id", component: RequestLineListComponent},
   
 
   { path: "**", component: E404Component}
