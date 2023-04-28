@@ -21,6 +21,7 @@ import { RequestChangeComponent } from './request/request-change/request-change.
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestLineListComponent } from './requestLine/request-line-list/request-line-list.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
 
 const routes: Routes = [
 
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: "request/detail/:id", component: RequestDetailComponent},
   { path: "request/create", component: RequestCreateComponent},
   { path: "request/change/:id", component: RequestChangeComponent},
+  { path: "request/review", component: RequestReviewComponent},
   { path: "requestLine/list/:id", component: RequestLineListComponent},
   
 

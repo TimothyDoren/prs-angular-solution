@@ -27,6 +27,7 @@ import { RequestDetailComponent } from './request/request-detail/request-detail.
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestChangeComponent } from './request/request-change/request-change.component';
 import { RequestLineListComponent } from './requestLine/request-line-list/request-line-list.component';
+import { RequestReviewComponent } from './request/request-review/request-review.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { RequestLineListComponent } from './requestLine/request-line-list/reques
     RequestCreateComponent,
     RequestChangeComponent,
     RequestLineListComponent,
+    RequestReviewComponent,
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

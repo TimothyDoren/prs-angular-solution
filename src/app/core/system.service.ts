@@ -18,4 +18,8 @@ export class SystemService {
       this.router.navigateByUrl("/user/login");
     }
   }
+
+  getLoggedInUserId(): number {
+    return this.loggedInUser ? this.loggedInUser.id : 0;
+  }
 }
