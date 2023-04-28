@@ -12,11 +12,13 @@ export class RequestListComponent {
 
   pageTitle = "Request List";
   requests: Request[] = [];
+  userId: number = 0;
 
   constructor(
     private sys: SystemService,
     private reqSvc: RequestService
   ){}
+
 
   ngOnInit(): void {
     this.sys.checkLogin();

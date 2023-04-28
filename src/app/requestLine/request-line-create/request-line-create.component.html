@@ -1,0 +1,29 @@
+<div>
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{ pageTitle }}</span>
+    </header>
+    <main>
+        <table class="table table-sm">
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td><input [(ngModel)]="requestLine.id" readonly></td>
+                </tr>
+                <tr *ngIf="requestLine.request">
+                    <td>Request</td>
+                    <td><input [ngModel]="requestLine.request.id" readonly></td>
+                </tr>
+                <tr>
+                    <td>Product</td>
+                    <td><input [ngModel]="requestLine.product?.id"></td>
+                </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td><input [(ngModel)]="requestLine.quantity"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="save()" class="btn btn-primary">Create</button>
+    </main>
+</div>
