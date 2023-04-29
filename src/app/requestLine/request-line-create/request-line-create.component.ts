@@ -28,7 +28,7 @@ export class RequestLineCreateComponent {
   ){}
 
   save(): void {
-    this.requestLine.requestId = this.request.id;
+    this.requestLine.requestId = Number(this.request.id);
     this.rlSvc.create(this.requestLine).subscribe({
       next: (res) => {
         console.debug("RequestLine Created!");

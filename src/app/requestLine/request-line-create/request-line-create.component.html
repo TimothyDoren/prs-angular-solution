@@ -10,11 +10,11 @@
                     <td>Id</td>
                     <td><input [(ngModel)]="requestLine.id" readonly></td>
                 </tr>
-            <tr *ngIf="products.length > 0">
+            <tr>
                 <td>Products</td>
                 <td>
-                    <select [(ngModel)]="requestLine.product" name="product">
-                        <option *ngFor="let p of products" [ngValue]="p">{{ p.name }}</option>
+                    <select [(ngModel)]="requestLine.productId">
+                        <option *ngFor="let p of products" value="{{ p.id }}">{{ p.name }}</option>
                     </select>
                 </td>
             </tr>
