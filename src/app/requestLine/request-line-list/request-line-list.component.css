@@ -1,0 +1,9 @@
+a{
+    color: silver;
+    text-decoration: none;
+    padding: 0 10px;
+}
+a:hover{
+    color:black;
+    background-color: silver;
+}

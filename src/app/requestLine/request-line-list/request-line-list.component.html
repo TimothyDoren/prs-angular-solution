@@ -2,8 +2,6 @@
     <header>
         <app-menu></app-menu>
         <span id="pageTitle">{{ pageTitle }}</span>
-        <span> | </span>
-        <a routerLink="/request/create" class="">Create New</a>
     </header>
     <table class = "table table-striped table-sm" *ngIf="request">
         <thead>
@@ -51,9 +49,13 @@
                 <td>{{ rl.quantity }}</td>
                 <td>{{ rl.quantity * (rl.product === null ? 0 : rl.product.price) }}</td>
                 <td>
-                    <a routerLink="/requestline/edit/{{rl.id}}">Change</a>
+                    <a routerLink="/requestline/change/{{rl.id}}">Change</a>
                     <span> | </span>
-                    <a (click)="remove(rl)" class="">Delete</a>
+                    <a (click)="remove(rl)">Remove</a>
+                    <span *ngIf="showVerifyRemove">
+                        <span> | </span>
+                        <a (click)="removeVerified(rl)">Verify Remove</a>
+                    </span>
                 </td>
             </tr>
         </tbody>
