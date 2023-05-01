@@ -33,6 +33,7 @@ export class RequestReviewItemComponent {
 
   approve(requestLine: RequestLine): void {
     this.request.status = "APPROVED";
+    this.request.rejectionReason = "";
     this.reqSvc.change(this.request).subscribe({
       next: (res) => {
         console.debug("Request Approved!");
