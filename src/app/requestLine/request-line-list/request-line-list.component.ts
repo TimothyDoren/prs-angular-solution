@@ -29,7 +29,20 @@ export class RequestLineListComponent {
   ){}
 
   review(): void {
- //  if(this.request.total )
+   if(this.request.total > 50){
+    this.request.status = "REVIEW";
+   }
+   else if (this.request.total <= 50) {
+    this.request.status = "APPROVED";
+   }
+   this.reqSvc.change(this.request).subscribe({
+    next: (res) => {
+      console.debug("Request Status Changed!");
+    },
+    error: (err) => {
+      console.debug("Error updating Request", err);
+    }
+   })
   }
 
   remove(requestLine: RequestLine): void {
