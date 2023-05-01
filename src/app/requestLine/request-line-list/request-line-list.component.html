@@ -29,6 +29,7 @@
             </tr>
         </tbody>
     </table>
+    <span id="tableTitle">{{ tableTitle }}</span>
     <a routerLink="/requestLine/create/{{request.id}}" *ngIf="request">Create New</a>
     <table class="table table-sm table-striped">
         <thead>
@@ -49,7 +50,7 @@
                 <td>{{ rl.quantity }}</td>
                 <td>{{ rl.quantity * (rl.product === null ? 0 : rl.product.price) }}</td>
                 <td>
-                    <a routerLink="/requestline/change/{{rl.id}}">Change</a>
+                    <a routerLink="/requestLine/change/{{rl.id}}">Change</a>
                     <span> | </span>
                     <a (click)="remove(rl)">Remove</a>
                     <span *ngIf="showVerifyRemove">

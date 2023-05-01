@@ -1,1 +1,29 @@
-<p>request-line-change works!</p>
+<div>
+    <header>
+        <app-menu></app-menu>
+        <span id="pageTitle">{{ pageTitle }}</span>
+    </header>
+    <main>
+        <table class="table table-sm">
+            <tbody>
+                <tr>
+                    <td>Id</td>
+                    <td><input [(ngModel)]="requestLine.id" readonly></td>
+                </tr>
+            <tr>
+                <td>Products</td>
+                <td>
+                    <select [(ngModel)]="requestLine.productId">
+                        <option *ngFor="let p of products" value="{{ p.id }}">{{ p.name }}</option>
+                    </select>
+                </td>
+            </tr>
+                <tr>
+                    <td>Quantity</td>
+                    <td><input [(ngModel)]="requestLine.quantity"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button (click)="save()" class="btn btn-primary">Change</button>
+    </main>
+</div>

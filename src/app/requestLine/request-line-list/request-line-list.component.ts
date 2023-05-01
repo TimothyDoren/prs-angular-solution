@@ -13,11 +13,12 @@ import { RequestLineService } from '../request-line.service';
 })
 export class RequestLineListComponent {
 
-  pageTitle = "Request Lines";
+  pageTitle = "Requests";
   showVerifyRemove: boolean = false;
   request!: Request;
   requestLines!: RequestLine[];
   requestLine!: RequestLine;
+  tableTitle = "RequestLines";
 
   constructor(
     private sys: SystemService,
@@ -28,7 +29,7 @@ export class RequestLineListComponent {
   ){}
 
   review(): void {
-    
+ //  if(this.request.total )
   }
 
   remove(requestLine: RequestLine): void {
